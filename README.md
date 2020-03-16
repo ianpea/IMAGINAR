@@ -2,7 +2,7 @@
 
 Contact: ian.peewujian@gmail.com
 
-Done by **Pee Wu Jian** from January 2020 - February 2020.
+Done by **Pee Wu Jian** (Ian) from January 2020 - February 2020.
 
 # Links
 Video Link: https://www.youtube.com/watch?v=6R38CkaivKQ
