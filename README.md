@@ -4,11 +4,11 @@ Contact: ian.peewujian@gmail.com
 
 Done by **Pee Wu Jian** (Ian) from January 2020 - February 2020.
 
-# Links
-Video Link: https://www.youtube.com/watch?v=6R38CkaivKQ
-
 # IMAGINAR
 IMAGINAR (IMAGIN-A-R) is an Augmented Rreality (AR) game in which the player can imagine "things" and transform into a pet that can fight imaginary enemies. This game is built using the MVC design pattern.
+
+# Links
+Video Link: https://www.youtube.com/watch?v=6R38CkaivKQ
 
 # Gameplay
 ## Imagination & Enemies
