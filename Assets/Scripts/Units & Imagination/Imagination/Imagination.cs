@@ -9,9 +9,9 @@ using GoogleARCore;
 public class Imagination : MonoBehaviour
 {
     public IMAGINATION_TYPE type;
+    public IMAGINATION_STATE currenState;
     public Animator anim;
     public bool spawned = false;
-    public IMAGINATION_STATE currenState;
     public ParticleSystem destroyedPFX;
     public ParticleSystem disappearPFX;
 

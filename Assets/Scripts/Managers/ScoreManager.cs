@@ -50,7 +50,7 @@ public class ScoreManager : MonoBehaviour
         sessionImaginationPoints = 0;
         sessionScore = 0;
 
-        GameView.Instance.Controller.onSave += FinalUpdate;
+        GameManager.Instance.Controller.onSave += FinalUpdate;
     }
 
     private void Update()
@@ -81,7 +81,7 @@ public class ScoreManager : MonoBehaviour
     public void UpdateScore()
     {
         // prevent FinalUpdate() from changing the sessionScore below when saving.
-        if (GameView.Instance.Model.isSaving)
+        if (GameManager.Instance.Model.isSaving)
             return;
 
         sessionScore = (totalImaginationPoints + sessionImaginationPoints) * scoreMultiplier;

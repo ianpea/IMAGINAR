@@ -178,7 +178,7 @@ public class ARCoreController
 
         if (Physics.Raycast(V.transform.position, M.FirstPersonCamera.transform.forward, out hitInfo, 100.0f))
         {
-            if (GameView.Instance.Model.currentState == GAME_STATE.Player)
+            if (GameManager.Instance.Model.currentState == GAME_STATE.Player)
             {
                 Debug.Log(hitInfo.collider.gameObject.tag);
                 switch (hitInfo.collider.gameObject.tag)
@@ -192,7 +192,7 @@ public class ARCoreController
                     case "Monster": // Fade the screen to black if look at the enemy too long.
                         if (!Fade.isFading)
                         {
-                            GameView.Instance.Controller.FadeToBlack();
+                            GameManager.Instance.Controller.FadeToBlack();
                             // volume decrease
                         }
                         break;
@@ -204,7 +204,7 @@ public class ARCoreController
                         break;
                 }
             }
-            else if (GameView.Instance.Model.currentState == GAME_STATE.Pet)
+            else if (GameManager.Instance.Model.currentState == GAME_STATE.Pet)
             {
                 switch (hitInfo.collider.tag)
                 {
@@ -218,7 +218,7 @@ public class ARCoreController
         }
         else
         {// Cancel the fade to black if the player look away from enemy.
-            GameView.Instance.Controller.FadeToTransparent();
+            GameManager.Instance.Controller.FadeToTransparent();
         }
     }
 
@@ -228,7 +228,7 @@ public class ARCoreController
     /// <param name="touch"></param>
     private void AllySpawn(Touch touch)
     {
-        if (GameView.Instance.Model.currentState == GAME_STATE.Pet)
+        if (GameManager.Instance.Model.currentState == GAME_STATE.Pet)
             return;
         // Raycast against the location the player touched to search for planes.
         TrackableHit hit;

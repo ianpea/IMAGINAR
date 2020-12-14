@@ -26,7 +26,7 @@ public class Monster : Unit
 
     void FixedUpdate()
     {
-        if (isWander && !isWandering && GameView.Instance.Model.currentState == GAME_STATE.Pet)
+        if (isWander && !isWandering && GameManager.Instance.Model.currentState == GAME_STATE.Pet)
         {
             Action();
         }

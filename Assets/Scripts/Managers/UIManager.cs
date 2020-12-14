@@ -18,7 +18,6 @@ public class UIManager : MonoBehaviour
     }
 
     public const float chargeTime = 1.0f;
-
     public bool isPointerEnter = false;
     public bool isPointerExit = false;
 
@@ -79,7 +78,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateGameState()
     {
-        GAME_STATE gameState = GameView.Instance.Model.currentState;
+        GAME_STATE gameState = GameManager.Instance.Model.currentState;
         if (gameState == GAME_STATE.Player)
         {
             playerImg.gameObject.SetActive(true);
@@ -117,7 +116,7 @@ public class UIManager : MonoBehaviour
             }
             if(Mathf.Approximately(transformImg.fillAmount, 0.0f)) // If the fillAmount is close to zero, reset it.
             {
-                GameView.Instance.Controller.SwitchState();
+                GameManager.Instance.Controller.SwitchState();
                 CancelTransform();
                 break;
             }
@@ -162,7 +161,7 @@ public class UIManager : MonoBehaviour
         AudioManager.Instance.SFXButtonPressed();
         Time.timeScale = 1.0f;
         StartCoroutine(Fade.FadeTo(1.0f, 1.5f, fadeImg));
-        GameView.Instance.Controller.SaveGame();
+        GameManager.Instance.Controller.SaveGame();
         Invoke("LoadMainMenu", 1.5f);
     }
 

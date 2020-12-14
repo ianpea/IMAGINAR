@@ -69,7 +69,7 @@ public class Animal : Imagination
             return;
         }
 
-        if (p != null && GameView.Instance.Model.sessionAnchor != null)
+        if (p != null && GameManager.Instance.Model.sessionAnchor != null)
         {
             transform.LookAt(p.transform);
             gameObject.transform.position += targetDir.normalized * moveDist * Time.deltaTime;

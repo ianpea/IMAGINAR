@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using GoogleARCore;
 
-public class MenuManager : MonoBehaviour
+public class MenuManager : Singleton<MenuManager>
 {
     private static MenuManager _instance;
     public static MenuManager Instance { get { return _instance; } }

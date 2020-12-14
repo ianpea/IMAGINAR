@@ -9,7 +9,7 @@ public class GameController
     public delegate void OnTransform();
     public OnTransform onTransform;
 
-    GameView V;
+    GameManager V;
     GameModel M;
     ScoreManager SM;
     /// <summary>
@@ -21,7 +21,7 @@ public class GameController
 
     public void GameInit()
     {
-        V = GameView.Instance;
+        V = GameManager.Instance;
         M = V.Model;
 
         SM = ScoreManager.Instance;
@@ -51,7 +51,7 @@ public class GameController
     // Update is called once per frame
     public void Update()
     {
-        if(GameView.Instance.Model.currentState == GAME_STATE.Player)
+        if(GameManager.Instance.Model.currentState == GAME_STATE.Player)
         {
             RandomAnimal(GameModel.imaginationSpawnCooldown);
             RandomEnemy(GameModel.enemySpawnCooldown);
@@ -151,7 +151,7 @@ public class GameController
     /// </summary>
     public void FadeToBlack()
     {
-        UIManager.Instance.fadeCo = V.StartCoroutine(Fade.FadeTo(1.0f, 5.0f, UIManager.Instance.fadeImg, GameView.Instance.Controller.RandomizeEnemies));
+        UIManager.Instance.fadeCo = V.StartCoroutine(Fade.FadeTo(1.0f, 5.0f, UIManager.Instance.fadeImg, GameManager.Instance.Controller.RandomizeEnemies));
     }
 
     /// <summary>
@@ -282,7 +282,7 @@ public class GameController
         onSave?.Invoke();
         PlayerPrefs.SetInt("Score", ScoreManager.Instance.totalScore);
         PlayerPrefs.SetInt("ImaginationPoints", ScoreManager.Instance.totalImaginationPoints);
-        PlayerPrefs.SetString("State", GameView.Instance.Model.currentState.ToString());
+        PlayerPrefs.SetString("State", GameManager.Instance.Model.currentState.ToString());
 
         // volume, 0 = muted, 1 = listening
         int mute = AudioListener.pause ? 1 : 0;
@@ -307,7 +307,7 @@ public class GameController
         ScoreManager.Instance.totalScore = score;
         ScoreManager.Instance.totalImaginationPoints = ip;
 
-        GameView.Instance.Model.currentState = 
+        GameManager.Instance.Model.currentState = 
             state == 
             GAME_STATE.Pet.ToString() ? GAME_STATE.Pet : GAME_STATE.Player;
 

@@ -54,7 +54,7 @@ public class AudioManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == 0)
             return;
-        GAME_STATE state = GameView.Instance.Model.currentState;
+        GAME_STATE state = GameManager.Instance.Model.currentState;
         if (state == GAME_STATE.Player)
         {
             SFXBGMPlayer();
